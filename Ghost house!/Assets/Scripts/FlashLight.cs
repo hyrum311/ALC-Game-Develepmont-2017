@@ -6,7 +6,9 @@ public class FlashLight : MonoBehaviour {
 
 
 	public bool lightOn;
-	light light;
+
+	Light light;
+
 	void Start () {
 		light = GetComponent<Light> ();
 
@@ -22,8 +24,7 @@ public class FlashLight : MonoBehaviour {
 			light.enabled = false;
 
 		}
-		else if (Input.GetKeyUp (KeyCode.L) && !lightOn)
-		{
+		else if (Input.GetKeyUp (KeyCode.L) && !lightOn){
 			lightOn = true;
 			light.enabled=true;
 		}
