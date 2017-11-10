@@ -12,7 +12,7 @@ using System.Collections;
  		flash = gameObject.GetComponentInChildren<Light>().GetComponentInChildren<FlashLight>();
 		 print("Obj:" + flash);
 		 flash.isLightOn();
-		 Print("Start"+ flash.isLightOn());
+		 print("Start"+ flash.isLightOn());
  	}
 
 
@@ -20,7 +20,7 @@ using System.Collections;
 	 }
  	 	
 	void OnTriggerEnter(Collider other){
-		 print(Other.gameObject.name);
+		 print(other.gameObject.name);
 		 print ("Collider"+flash);
 
 		if(other.gameObject.name == "Ghost" && flash == true){
