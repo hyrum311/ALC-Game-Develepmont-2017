@@ -12,7 +12,7 @@ public class GhostAI : MonoBehaviour
 	{
 		if(other.gameObject.name == "Player"){
 			Follow();
-		}
+			print("Ghost is following");}
 		else{
 			print("Ghost is grounded");
 			Wander();
