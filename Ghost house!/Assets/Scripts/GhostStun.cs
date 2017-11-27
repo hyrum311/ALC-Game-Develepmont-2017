@@ -32,7 +32,7 @@ using System.Collections;
  	
 		 IEnumerator Wait(float time, Collider other ){
 			 	yield return new WaitForSeconds(time);
-				other.gameObject.GetComponent<GhostAI>().moveSpeed = 5f;
+				other.gameObject.GetComponent<GhostAI>().moveSpeed = 2f;
 				print("Ghost is unstunned");
 		
 	}

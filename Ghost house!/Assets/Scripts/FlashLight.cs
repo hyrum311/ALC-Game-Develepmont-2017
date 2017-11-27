@@ -6,10 +6,16 @@ public class FlashLight : MonoBehaviour {
 
 
 public bool lightOn = true;
+//Flashlight power capacity
+	public int maxPower = 4;
+//Useable flashlight power
+	public int currentPower;
 
 	Light light;
 
 	void Start () {
+		currentPower = maxPower;
+		print("Power =" + currentPower);
 		light = GetComponent<Light> ();
 
 		lightOn = true;
