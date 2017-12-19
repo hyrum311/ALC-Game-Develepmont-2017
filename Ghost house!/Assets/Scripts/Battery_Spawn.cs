@@ -22,28 +22,30 @@ public class Battery_Spawn : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	 if(batSpawned == false){
-		 StartCoroutine(spawnBat(spawnTime, battery));
-		
-
-	 }
-	 else{
-		 
+		if(batSpawned == false){
+			StartCoroutine(SpawnBat(spawnTime, battery));
+		}
+		else if(batSpawned == true){
+			print("bat spawned");
+StopCoroutine(SpawnBat(spawnTime, battery));
 	}
 	}
 
-	void OnTriggerEnter(Collider other){
-		if(other.Rigidbody.tag == "Battery"){
+	void OnTriggerStay(Collider other){
+		if(other.gameObject.tag == "Battery"){
+			print("Battery is in the trigger");
 			batSpawned = true;
 	}
 		else{
 			batSpawned = false;
+			print("Battery is not in the trigger");
 
 		}
 	}
 	IEnumerator SpawnBat(float time, Rigidbody bat){
 		yield return new WaitForSeconds(time);
-		Instantiate(battery, spawnPoint.position, spawnPoint.rotation);
+		Instantiate(bat, spawnPoint.position, spawnPoint.rotation);
+		batSpawned = true;
 
 
 	}
